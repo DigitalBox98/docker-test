@@ -15,10 +15,10 @@ jobs:
         uses: docker/setup-qemu-action@v2
       -
         name: Install m4
-        uses: run: sudo apt-get install -y m4
+        run: sudo apt-get install -y m4
       -
         name: Preprocess Dockerfile.m4
-        uses: m4 Dockerfile.m4 > Dockerfile
+        run: m4 Dockerfile.m4 > Dockerfile
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
