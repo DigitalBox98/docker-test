@@ -15,4 +15,4 @@ EXPOSE 22
 RUN qemu-img create -f qcow2 /haiku-disk.img 2G && ls -l /haiku-disk.img
 
 # Commande pour démarrer HaikuOS avec QEMU
-CMD ["qemu-system-x86_64", "-m", "2G", "-cdrom", "/haiku-r1beta4-x86_64-anyboot.iso", "-hda", "/haiku-disk.img", "-nographic", "-enable-kvm", "-netdev", "user,id=mynetwork,hostfwd=tcp::2222-:22", "-device", "virtio-net,netdev=mynetwork"]
+CMD ["qemu-system-x86_64", "-m", "2G", "-cdrom", "/haiku-r1beta4-x86_64-anyboot.iso", "-hda", "/haiku-disk.img", "-nographic", "-netdev", "user,id=mynetwork,hostfwd=tcp::2222-:22", "-device", "virtio-net,netdev=mynetwork"]
